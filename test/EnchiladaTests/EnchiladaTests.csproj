@@ -16,9 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Enchilada" Version="1.0.9" />
-    <PackageReference Include="Enchilada.Azure" Version="1.0.9" />
-    <PackageReference Include="Enchilada.Ftp" Version="1.0.9" />
+    <PackageReference Include="Enchilada" Version="1.0.10" />
+    <PackageReference Include="Enchilada.Azure" Version="1.0.10" />
+    <PackageReference Include="Enchilada.Ftp" Version="1.0.10" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
     <PackageReference Include="Shouldly" Version="2.8.2" />
     <PackageReference Include="xunit" Version="2.2.0" />

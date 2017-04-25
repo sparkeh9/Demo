@@ -4,7 +4,6 @@ namespace EnchiladaTests
     using System.Collections.Generic;
     using System.IO;
     using System.Threading.Tasks;
-    using Enchilada.Azure.BlobStorage;
     using Enchilada.Configuration;
     using Enchilada.Filesystem;
     using Enchilada.Ftp;
@@ -28,7 +27,7 @@ namespace EnchiladaTests
                     },
                     new FtpAdapterConfiguration
                     {
-                        AdapterName = "dogs",
+                        AdapterName = "moar_cats",
                         Host = "localhost",
                         Port = 21,
                         Username = "user",
@@ -39,7 +38,7 @@ namespace EnchiladaTests
             } );
 
             var source = enchilada.OpenFileReference( "enchilada://cats/cat.jpg" );
-            var target = enchilada.OpenFileReference( "enchilada://dogs/cat2.jpg" );
+            var target = enchilada.OpenFileReference("enchilada://moar_cats/cat2.jpg");
             target.Exists.ShouldBeFalse();
 
             await target.CopyFromAsync( source );

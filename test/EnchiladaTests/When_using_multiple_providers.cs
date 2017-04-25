@@ -6,11 +6,11 @@ namespace EnchiladaTests
     using Enchilada.Azure.BlobStorage;
     using Enchilada.Configuration;
     using Enchilada.Filesystem;
+    using Enchilada.Ftp;
     using Enchilada.Infrastructure;
-    using Shouldly;
     using Xunit;
 
-    public class When_using_azure_blob_storage
+    public class When_using_multiple_providers
     {
         [ Fact ]
         public async Task Should_copy_from_one_location_to_another()
@@ -24,9 +24,18 @@ namespace EnchiladaTests
                         AdapterName = "cats",
                         Directory = $"{AppContext.BaseDirectory}\\Resources"
                     },
-                    new BlobStorageAdapterConfiguration
+                    new FtpAdapterConfiguration
                     {
                         AdapterName = "moar_cats",
+                        Host = "localhost",
+                        Port = 21,
+                        Username = "user",
+                        Password = "password",
+                        Directory = "/",
+                    },
+                    new BlobStorageAdapterConfiguration
+                    {
+                        AdapterName = "even_moar_cats",
                         ConnectionString = "UseDevelopmentStorage=true;",
                         ContainerReference = "cats",
                         CreateContainer = true,
@@ -35,12 +44,12 @@ namespace EnchiladaTests
                 }
             } );
 
-            var source = enchilada.OpenFileReference( "enchilada://cats/cat.jpg" );
-            var target = enchilada.OpenFileReference( "enchilada://moar_cats/cat2.jpg" );
-            target.Exists.ShouldBeFalse();
+            var filesystem = enchilada.OpenFileReference( "enchilada://cats/cat.jpg" );
+            var ftp = enchilada.OpenFileReference( $"enchilada://moar_cats/{Guid.NewGuid()}.jpg" );
+            var blob = enchilada.OpenFileReference( $"enchilada://even_moar_cats/{Guid.NewGuid()}.jpg" );
 
-            await target.CopyFromAsync( source );
-            target.Exists.ShouldBeTrue();
+            await ftp.CopyFromAsync( filesystem );
+            await blob.CopyFromAsync( ftp );
         }
     }
 }

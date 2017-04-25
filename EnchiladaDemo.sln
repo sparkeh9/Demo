@@ -7,6 +7,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnchiladaTests", "test\Ench
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7CB50C9C-C196-4B75-B2E8-9D15BBBE6C1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "src\WebApplication1\WebApplication1.csproj", "{6A902DD6-8BBF-4EFB-9D36-B8424140BBCB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{28E61887-8BAE-49D6-9473-AD545A45B5CF}"
+	ProjectSection(SolutionItems) = preProject
+		1.txt = 1.txt
+		2.txt = 2.txt
+		3.txt = 3.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +26,10 @@ Global
 		{F4ACEC88-A1A9-4CE2-8D85-6EB930ECA655}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4ACEC88-A1A9-4CE2-8D85-6EB930ECA655}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4ACEC88-A1A9-4CE2-8D85-6EB930ECA655}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A902DD6-8BBF-4EFB-9D36-B8424140BBCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A902DD6-8BBF-4EFB-9D36-B8424140BBCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A902DD6-8BBF-4EFB-9D36-B8424140BBCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A902DD6-8BBF-4EFB-9D36-B8424140BBCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

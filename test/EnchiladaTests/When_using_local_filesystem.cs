@@ -1,15 +1,13 @@
-using System;
-using Xunit;
-
 namespace EnchiladaTests
 {
+    using System;
+    using Xunit;
     using System.Collections.Generic;
     using System.IO;
     using System.Threading.Tasks;
     using Enchilada.Configuration;
     using Enchilada.Filesystem;
     using Enchilada.Infrastructure;
-    using Shouldly;
 
     public class When_using_local_filesystem
     {
@@ -27,13 +25,14 @@ namespace EnchiladaTests
                     }
                 }
             } );
-            
+
+            var guid = Guid.NewGuid();
             var source = enchilada.OpenFileReference( "enchilada://cats/cat.jpg" );
-            var target = enchilada.OpenFileReference( "enchilada://cats/cat2.jpg" );
+            var target = enchilada.OpenFileReference( $"enchilada://cats/{guid}.jpg" );
 
             await target.CopyFromAsync( source );
 
-            File.Exists($"{AppContext.BaseDirectory}\\Resources\\cat2.jpg");
+            File.Exists( $"{AppContext.BaseDirectory}\\Resources\\{guid}.jpg" );
         }
     }
 }

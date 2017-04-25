@@ -1,0 +1,8 @@
+    "Enchilada": {
+        "Adapters": {
+            "cats": {
+				"adapter": "local",
+				"directory": "C:\\my-folder"
+            }
+        }
+    }

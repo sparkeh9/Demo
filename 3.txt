@@ -1,0 +1,11 @@
+    "Enchilada": {
+        "Adapters": {
+            "cats": {
+				"adapter": "azure-blob",
+				"connectionString": "UseDevelopmentStorage=true;",
+				"containerReference": "test",
+				"createContainer": true,
+				"isPublicAccess": true
+            }
+        }
+    }

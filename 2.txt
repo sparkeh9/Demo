@@ -1,0 +1,12 @@
+    "Enchilada": {
+        "Adapters": {
+            "cats": {
+                "adapter": "ftp",
+                "host": "localhost",
+                "port": "21",
+                "directory": "/",
+                "username": "user",
+                "password": "password"
+            }
+        }
+    }
