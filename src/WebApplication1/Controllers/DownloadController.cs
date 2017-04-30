@@ -12,7 +12,6 @@
         // Keep these outside the scope of the action - 
         // otherwise the framework disposes them too early
         private IFile downloadFileReference;
-
         private Stream downloadFileStream;
 
         public DownloadController( IEnchiladaFilesystemResolver enchilada )
